@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cocas’ Michel | Corte, color y maquillaje</title>
+<meta name="description" content="Cocas’ Michel: corte de pelo, extensiones, color, peinados y maquillaje. Cotiza por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header>
+  <div class="contenedor">
+    <nav aria-label="Principal">
+      <a class="logo" href="#inicio">Cocas’ Michel</a>
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#cotizador">Cotizador</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero-nombre">
+      <h1 class="marca">Cocas’<br>Michel</h1>
+    </div>
+    <div class="hero-mensaje">
+      <p>Corte, color y maquillaje con 20 años de oficio.</p>
+      <a class="btn" data-whatsapp="Hola, quiero información de sus servicios.">Escríbenos por WhatsApp</a>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="contenedor">
+      <h2>Servicios</h2>
+      <p class="intro">El precio final puede variar según el largo, el tipo de pelo y el trabajo. Te confirmamos por WhatsApp antes de empezar.</p>
+      <ul class="lista-servicios" id="lista-servicios"></ul>
+    </div>
+  </section>
+
+  <section class="oscuro" id="cotizador">
+    <div class="contenedor">
+      <h2>Cotiza tu servicio</h2>
+      <p class="intro">Elige el servicio y mira el precio. Después lo mandas por WhatsApp para confirmar.</p>
+      <div class="cotizador">
+        <div>
+          <label for="servicio">Servicio</label>
+          <select id="servicio"></select>
+        </div>
+        <div class="resultado" aria-live="polite">
+          <div class="monto" id="monto"></div>
+          <p class="nota" id="nota"></p>
+        </div>
+        <a class="btn" id="enviar" href="#">Enviar cotización por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="fondo-beige" id="galeria">
+    <div class="contenedor">
+      <h2>Nuestros trabajos</h2>
+      <p class="intro">Algunos de los cortes, colores y peinados que hemos hecho.</p>
+      <div class="galeria-grid" id="galeria-grid"></div>
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="contenedor">
+      <h2>Pelo y productos</h2>
+      <p class="texto-seccion">También vendemos pelo y productos para el cuidado del cabello. Pronto podrás verlos y comprarlos aquí mismo; mientras tanto, pregúntanos por WhatsApp qué tenemos disponible.</p>
+      <a class="btn" data-whatsapp="Hola, quiero información sobre la venta de pelo y productos.">Preguntar por productos</a>
+    </div>
+  </section>
+
+  <section class="oscuro" id="contacto">
+    <div class="contenedor">
+      <h2>Contacto</h2>
+      <p class="intro">Escríbenos y agenda tu cita. Respondemos por WhatsApp.</p>
+      <a class="btn" data-whatsapp="Hola, quiero agendar una cita.">Agendar por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor">© <span id="anio"></span> Cocas’ Michel</div>
+</footer>
+</body>
+</html>

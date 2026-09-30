@@ -1,0 +1,77 @@
+/* 1. VARIABLES: paleta y fuentes en un solo lugar */
+:root {
+  --blanco: #fdfcfa;
+  --beige: #ece3d5;
+  --arena: #d3c2a8;
+  --negro: #1a1716;
+  --bordo: #7b2333;
+  --gris: #6f665d;
+  --display: "Marcellus", "Palatino Linotype", Georgia, serif;
+  --texto: "Jost", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--blanco); color: var(--negro); font-family: var(--texto); line-height: 1.65; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--bordo); outline-offset: 3px; }
+.contenedor { width: min(1040px, 100% - 2.5rem); margin-inline: auto; }
+section { padding: 5rem 0; }
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 0.75rem; }
+.intro { color: var(--gris); max-width: 52ch; margin-bottom: 2.5rem; }
+
+/* 2. NAVEGACIÓN */
+header { border-bottom: 1px solid var(--arena); background: var(--blanco); }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 0; gap: 1rem; flex-wrap: wrap; }
+.logo { font-family: var(--display); font-size: 1.4rem; text-decoration: none; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; font-size: 0.95rem; }
+nav ul a { text-decoration: none; color: var(--gris); }
+nav ul a:hover { color: var(--bordo); }
+
+/* 3. BOTONES */
+.btn { display: inline-block; background: var(--bordo); color: var(--blanco); font: inherit; font-weight: 500; padding: 0.9rem 1.8rem; border: 0; border-radius: 0; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--negro); }
+.oscuro .btn { background: var(--beige); color: var(--negro); }
+.oscuro .btn:hover { background: var(--blanco); }
+
+/* 4. INICIO: dos paneles, beige con el nombre y negro con el mensaje */
+.hero { padding: 0; display: grid; grid-template-columns: 1.3fr 1fr; min-height: 78vh; }
+.hero-nombre { background: var(--beige); display: flex; align-items: center; padding: 4rem clamp(1.25rem, 6vw, 5rem); }
+.marca { font-family: var(--display); font-weight: 400; font-size: clamp(3.6rem, 10vw, 8rem); line-height: 0.95; letter-spacing: -0.01em; }
+.hero-mensaje { background: var(--negro); color: var(--blanco); display: flex; flex-direction: column; justify-content: center; gap: 2rem; padding: 4rem clamp(1.25rem, 4vw, 3.5rem); }
+.hero-mensaje p { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.3; }
+.hero-mensaje .btn { align-self: flex-start; background: var(--beige); color: var(--negro); }
+.hero-mensaje .btn:hover { background: var(--blanco); }
+
+/* 5. SERVICIOS: lista tipo menú */
+.lista-servicios { list-style: none; border-top: 1px solid var(--arena); }
+.lista-servicios li { display: flex; justify-content: space-between; gap: 1rem; padding: 1.15rem 0; border-bottom: 1px solid var(--arena); align-items: baseline; }
+.lista-servicios .nombre { font-family: var(--display); font-size: 1.5rem; }
+.lista-servicios .precio { color: var(--bordo); font-weight: 500; white-space: nowrap; }
+.lista-servicios .precio.pendiente { color: var(--gris); font-weight: 400; font-size: 0.95rem; }
+
+/* 6. COTIZADOR (sección oscura para dar contraste) */
+.oscuro { background: var(--negro); color: var(--blanco); }
+.oscuro .intro { color: var(--arena); }
+.cotizador { display: grid; gap: 1.5rem; max-width: 520px; }
+label { display: block; margin-bottom: 0.4rem; color: var(--arena); }
+select { width: 100%; padding: 0.9rem; background: var(--blanco); color: var(--negro); border: 0; border-radius: 0; font: inherit; }
+.resultado { background: var(--bordo); padding: 1.25rem 1.5rem; }
+.resultado .monto { font-family: var(--display); font-size: 2.6rem; line-height: 1.1; }
+.resultado .nota { color: var(--beige); font-size: 0.9rem; margin-top: 0.4rem; }
+
+/* 7. GALERÍA */
+.fondo-beige { background: var(--beige); }
+.galeria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.galeria-grid figure { aspect-ratio: 4 / 5; background: var(--blanco); border: 1px solid var(--arena); display: grid; place-items: center; color: var(--gris); font-size: 0.9rem; overflow: hidden; }
+.galeria-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 8. PRODUCTOS, CONTACTO Y PIE */
+.texto-seccion { max-width: 58ch; color: var(--gris); margin-bottom: 1.75rem; }
+footer { background: var(--negro); color: var(--arena); border-top: 1px solid #3a3532; padding: 2rem 0; font-size: 0.9rem; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-nombre { padding-block: 3.5rem; }
+  section { padding: 3.5rem 0; }
+  nav ul { gap: 1rem; font-size: 0.85rem; }
+}

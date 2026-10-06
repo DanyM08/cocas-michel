@@ -12,11 +12,11 @@ export const NEGOCIO = {
     { nombre: "Maquillaje", precio: null }
   ],
   galeria: [
-    { src: "", alt: "Trabajo de corte" },
-    { src: "", alt: "Trabajo de color" },
-    { src: "", alt: "Extensiones" },
-    { src: "", alt: "Peinado" },
-    { src: "", alt: "Maquillaje" },
+    { src: "img/ExtensionesA1.jpeg", alt: "Extensiones" },
+    { src: "img/ExtensionesD1.jpeg", alt: "Extensiones" },
+    { src: "img/extencionesA.jpeg", alt: "Extensiones" },
+    { src: "img/extencionesD.jpeg", alt: "Extensioness" },
+    { src: "videos/Video1.mp4", alt: "Maquillaje" },
     { src: "", alt: "Decolorado" }
   ]
 };

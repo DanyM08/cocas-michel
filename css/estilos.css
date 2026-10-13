@@ -64,6 +64,7 @@ select { width: 100%; padding: 0.9rem; background: var(--blanco); color: var(--n
 .galeria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
 .galeria-grid figure { aspect-ratio: 4 / 5; background: var(--blanco); border: 1px solid var(--arena); display: grid; place-items: center; color: var(--gris); font-size: 0.9rem; overflow: hidden; }
 .galeria-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.galeria-grid video { width: 100%; height: 100%; object-fit: contain; background: var(--negro); display: block; }
 
 /* 8. PRODUCTOS, CONTACTO Y PIE */
 .texto-seccion { max-width: 58ch; color: var(--gris); margin-bottom: 1.75rem; }

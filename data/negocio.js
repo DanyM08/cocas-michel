@@ -6,17 +6,17 @@ export const NEGOCIO = {
   whatsapp: "523328298221",
   servicios: [
     { nombre: "Corte de pelo para hombre", precio: 100 },
-    { nombre: "Puesta de extensiones", precio: null },
-    { nombre: "Decolorante", precio: null },
-    { nombre: "Pintado de pelo", precio: null },
-    { nombre: "Peinados", precio: null },
-    { nombre: "Maquillaje", precio: null }
+    { nombre: "Puesta de extensiones", precio: 5000 },
+    { nombre: "Decolorante", precio: 2000 },
+    { nombre: "Pintado de pelo", precio: 3000 },
+    { nombre: "Peinados", precio: 500 },
+    { nombre: "Maquillaje", precio: 1000 }
   ],
   galeria: [
-    { tipo: "imagen", src: "img/extensiones-antes-2.jpeg", alt: "Extensiones: antes" },
-    { tipo: "imagen", src: "img/extensiones-despues-2.jpeg", alt: "Extensiones: después" },
-    { tipo: "imagen", src: "img/extensiones-antes-1.jpeg", alt: "Extensiones: antes" },
-    { tipo: "imagen", src: "img/extensiones-despues-1.jpeg", alt: "Extensiones: después" },
-    { tipo: "video", src: "videos/extensiones-video-1.mp4", alt: "Video de puesta de extensiones" }
+    { tipo: "imagen", src: "img/extensiones-antes-2.jpeg", alt: "Extensiones: antes" , categoria: "Extensiones"},
+    { tipo: "imagen", src: "img/extensiones-despues-2.jpeg", alt: "Extensiones: después" , categoria: "Extensiones"},
+    { tipo: "imagen", src: "img/extensiones-antes-1.jpeg", alt: "Extensiones: antes" , categoria: "Extensiones"},
+    { tipo: "imagen", src: "img/extensiones-despues-1.jpeg", alt: "Extensiones: después" , categoria: "Corte de hombre"},
+    { tipo: "video", src: "videos/extensiones-video-1.mp4", alt: "Video de puesta de extensiones" , categoria: "Corte de mujer"}
   ]
 };

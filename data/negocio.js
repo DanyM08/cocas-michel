@@ -1,6 +1,7 @@
 // DATOS DEL NEGOCIO: aquí se edita todo.
 // - precio: null significa "por cotizar" (se muestra "Cotiza por WhatsApp")
-// - galeria.src: ruta de la foto, por ejemplo "img/corte1.jpg"
+// - galeria.src: ruta de la foto, por ejemplo "img/corte1.jpg" (nombres en minúsculas y sin espacios)
+// - galeria.tipo: "imagen" o "video"
 export const NEGOCIO = {
   whatsapp: "523328298221",
   servicios: [
@@ -12,11 +13,10 @@ export const NEGOCIO = {
     { nombre: "Maquillaje", precio: null }
   ],
   galeria: [
-    { tipo: "Image", src: "img/ExtensionesA1.jpeg", alt: "Extensiones" },
-    { tipo: "Image",src: "img/ExtensionesD1.jpeg", alt: "Extensiones" },
-    { tipo: "Image",src: "img/extencionesA.jpeg", alt: "Extensiones" },
-    { tipo: "Image",src: "img/extencionesD.jpeg", alt: "Extensioness" },
-    { tipo: "video",src: "videos/Video1.mp4", alt: "Extensiones" },
-    { src: "", alt: "Decolorado" }
+    { tipo: "imagen", src: "img/extensiones-antes-2.jpeg", alt: "Extensiones: antes" },
+    { tipo: "imagen", src: "img/extensiones-despues-2.jpeg", alt: "Extensiones: después" },
+    { tipo: "imagen", src: "img/extensiones-antes-1.jpeg", alt: "Extensiones: antes" },
+    { tipo: "imagen", src: "img/extensiones-despues-1.jpeg", alt: "Extensiones: después" },
+    { tipo: "video", src: "videos/extensiones-video-1.mp4", alt: "Video de puesta de extensiones" }
   ]
 };

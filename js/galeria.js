@@ -9,6 +9,7 @@ export function iniciarGaleria() {
 
   function dibujar(lista) {
     grid.innerHTML = "";
+    grid.scrollLeft = 0;          // al filtrar, la tira vuelve al principio
     lista.forEach((foto) => {
       const figura = document.createElement("figure");
 
@@ -28,6 +29,11 @@ export function iniciarGaleria() {
         figura.appendChild(img);
       } else {
         figura.textContent = "Imagen no disponible";
+      }
+      if (foto.src) {
+        const pie = document.createElement("figcaption");
+        pie.textContent = foto.alt;
+        figura.appendChild(pie);
       }
       grid.appendChild(figura);
     });
@@ -56,7 +62,11 @@ export function iniciarGaleria() {
   // Categorías sin repetir, con "Todos" al principio.
   const categorias = ["Todos", ...new Set(NEGOCIO.galeria.map((f) => f.categoria))];
 
-  categorias.forEach((categoria) => {
+  // Con una sola categoría los filtros sobran: se quitan y aparecen solos cuando haya 2 o más.
+  const hayFiltros = categorias.length > 2;
+  if (!hayFiltros) filtros.remove();
+
+  (hayFiltros ? categorias : []).forEach((categoria) => {
     const boton = document.createElement("button");
     boton.textContent = categoria;
     boton.addEventListener("click", () => {
@@ -72,5 +82,5 @@ export function iniciarGaleria() {
   });
 
   dibujar(NEGOCIO.galeria);
-  filtros.querySelector("button").classList.add("activo");
+  filtros.querySelector("button")?.classList.add("activo");
 }

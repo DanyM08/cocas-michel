@@ -77,6 +77,13 @@ footer { background: var(--negro); color: var(--arena); border-top: 1px solid #3
 .filtros button { font: inherit; min-height: 44px; padding: 0 1.2rem; background: transparent; color: var(--negro); border: 1px solid var(--arena); cursor: pointer; white-space: nowrap; transition: background 0.25s, color 0.25s; }
 .filtros button.activo { background: var(--negro); color: var(--blanco); border-color: var(--negro); }
 
+/* Lightbox: foto ampliada sobre fondo oscuro. Oculto hasta que tiene la clase "abierto" */
+.galeria-grid img { cursor: zoom-in; }
+.lightbox { position: fixed; inset: 0; z-index: 30; background: rgba(0, 0, 0, 0.92); display: none; align-items: center; justify-content: center; padding: 1rem; }
+.lightbox.abierto { display: flex; }
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.lightbox button { position: absolute; top: 0.75rem; right: 0.75rem; width: 48px; height: 48px; font-size: 1.8rem; line-height: 1; background: var(--blanco); color: var(--negro); border: 0; cursor: pointer; }
+
 /* 9. BOTÓN FLOTANTE DE WHATSAPP */
 .whatsapp-flotante { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 10; background: #25d366; color: var(--blanco); font-weight: 500; text-decoration: none; padding: 0.85rem 1.3rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transition: transform 0.25s; }
 .whatsapp-flotante:hover { transform: scale(1.06); }
@@ -85,5 +92,10 @@ footer { background: var(--negro); color: var(--arena); border-top: 1px solid #3
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .hero-nombre { padding-block: 3.5rem; }
   section { padding: 3.5rem 0; }
-  nav ul { gap: 1rem; font-size: 0.85rem; }
+  header { position: sticky; top: 0; z-index: 20; }
+  nav { flex-direction: column; gap: 0.25rem; padding: 0.75rem 0 0; }
+  nav ul { width: 100%; justify-content: space-between; gap: 0; font-size: 0.9rem; }
+  nav ul a { display: block; padding: 0.75rem 0.4rem; }
+  footer { padding-bottom: 5rem; }
+  .whatsapp-flotante { right: 1rem; bottom: 1rem; }
 }

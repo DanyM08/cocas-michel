@@ -13,6 +13,14 @@ document.querySelectorAll("[data-whatsapp]").forEach((boton) => {
   boton.rel = "noopener";
 });
 
+// Ubicación: el mapa y el enlace de "Cómo llegar" salen de negocio.js.
+const comoLlegar = document.getElementById("como-llegar");
+document.getElementById("mapa").src = NEGOCIO.ubicacion.mapa;
+document.getElementById("direccion").textContent = NEGOCIO.ubicacion.direccion;
+comoLlegar.href = NEGOCIO.ubicacion.enlace;
+comoLlegar.target = "_blank";
+comoLlegar.rel = "noopener";
+
 // Botones de redes: el enlace sale de negocio.js. Si una red no tiene enlace, su botón se quita.
 document.querySelectorAll("[data-red]").forEach((boton) => {
   const enlace = NEGOCIO.redes[boton.dataset.red];

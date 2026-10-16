@@ -20,12 +20,35 @@ h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 5vw, 
 .intro { color: var(--gris); max-width: 52ch; margin-bottom: 2.5rem; }
 
 /* 2. NAVEGACIÓN */
-header { border-bottom: 1px solid var(--arena); background: var(--blanco); }
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 0; gap: 1rem; flex-wrap: wrap; }
-.logo { font-family: var(--display); font-size: 1.4rem; text-decoration: none; }
-nav ul { display: flex; gap: 1.5rem; list-style: none; font-size: 0.95rem; }
-nav ul a { text-decoration: none; color: var(--gris); transition: color 0.25s; }
-nav ul a:hover { color: var(--bordo); }
+/* El header es "sticky" (se queda arriba al hacer scroll) y el menú se despliega justo debajo de él */
+header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--arena); background: var(--blanco); }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; }
+.logo { display: block; line-height: 0; }
+.logo img { width: 56px; height: 56px; border-radius: 50%; display: block; }
+[id] { scroll-margin-top: 5rem; }
+
+/* Botón de 3 rayas: las rayas se vuelven una X cuando el menú está abierto */
+.menu-boton { width: 48px; height: 48px; background: transparent; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; }
+.menu-boton span { width: 26px; height: 2px; background: var(--negro); transition: transform 0.25s, opacity 0.25s; }
+.menu-boton[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-boton[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-boton[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--blanco); border-bottom: 1px solid var(--arena); padding: 0.5rem 1.25rem 1.5rem; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12); }
+.menu.abierto { display: block; }
+.menu ul { list-style: none; max-width: 1040px; margin-inline: auto; }
+.menu li a { display: block; padding: 0.9rem 0; font-family: var(--display); font-size: 1.4rem; text-decoration: none; border-bottom: 1px solid var(--beige); transition: color 0.25s; }
+.menu li a:hover { color: var(--bordo); }
+.menu .redes { max-width: 1040px; margin: 1.25rem auto 0; }
+
+/* Íconos de redes: círculos de 44px (cómodos para tocar) con el logo en blanco */
+.redes { display: flex; gap: 0.75rem; }
+.redes a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--bordo); transition: transform 0.25s; }
+.redes a:hover { transform: scale(1.1); }
+.redes img { width: 22px; height: 22px; display: block; }
+.bloque-redes { margin-top: 3rem; }
+.bloque-redes h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin-bottom: 1rem; }
+.pie { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 
 /* 3. BOTONES */
 .btn { display: inline-block; background: var(--bordo); color: var(--blanco); font: inherit; font-weight: 500; padding: 0.9rem 1.8rem; border: 0; border-radius: 0; text-decoration: none; cursor: pointer; transition: background 0.25s, transform 0.25s; }
@@ -33,6 +56,7 @@ nav ul a:hover { color: var(--bordo); }
 .btn:hover { background: var(--negro); }
 .oscuro .btn { background: var(--beige); color: var(--negro); }
 .oscuro .btn:hover { background: var(--blanco); }
+#contacto .btn { margin: 0 0.75rem 0.75rem 0; }
 
 /* 4. INICIO: dos paneles, beige con el nombre y negro con el mensaje */
 .hero { padding: 0; display: grid; grid-template-columns: 1.3fr 1fr; min-height: 78vh; }
@@ -85,17 +109,14 @@ footer { background: var(--negro); color: var(--arena); border-top: 1px solid #3
 .lightbox button { position: absolute; top: 0.75rem; right: 0.75rem; width: 48px; height: 48px; font-size: 1.8rem; line-height: 1; background: var(--blanco); color: var(--negro); border: 0; cursor: pointer; }
 
 /* 9. BOTÓN FLOTANTE DE WHATSAPP */
-.whatsapp-flotante { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 10; background: #25d366; color: var(--blanco); font-weight: 500; text-decoration: none; padding: 0.85rem 1.3rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transition: transform 0.25s; }
+.flotantes { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 10; }
+.whatsapp-flotante { display: block; background: #25d366; color: var(--blanco); font-weight: 500; text-decoration: none; padding: 0.85rem 1.3rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transition: transform 0.25s; }
 .whatsapp-flotante:hover { transform: scale(1.06); }
 
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .hero-nombre { padding-block: 3.5rem; }
   section { padding: 3.5rem 0; }
-  header { position: sticky; top: 0; z-index: 20; }
-  nav { flex-direction: column; gap: 0.25rem; padding: 0.75rem 0 0; }
-  nav ul { width: 100%; justify-content: space-between; gap: 0; font-size: 0.9rem; }
-  nav ul a { display: block; padding: 0.75rem 0.4rem; }
   footer { padding-bottom: 5rem; }
-  .whatsapp-flotante { right: 1rem; bottom: 1rem; }
+  .flotantes { right: 1rem; bottom: 1rem; }
 }

@@ -15,13 +15,24 @@
 <header>
   <div class="contenedor">
     <nav aria-label="Principal">
-      <a class="logo" href="#inicio">Cocas’ Michel</a>
-      <ul>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#cotizador">Cotizador</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
+      <a class="logo" href="#inicio"><img src="img/logo.jpg" alt="Cocas’ Michel, el salón de la estética"></a>
+      <button class="menu-boton" id="menu-boton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="menu" id="menu">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#cotizador">Cotizador</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#redes">Redes</a></li>
+        </ul>
+        <div class="redes">
+          <a data-red="instagram" aria-label="Instagram"><img src="img/iconos/instagram.svg" alt=""></a>
+          <a data-red="tiktok" aria-label="TikTok"><img src="img/iconos/tiktok.svg" alt=""></a>
+          <a data-red="facebook" aria-label="Facebook"><img src="img/iconos/facebook.svg" alt=""></a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -85,15 +96,33 @@
       <h2>Contacto</h2>
       <p class="intro">Escríbenos y agenda tu cita. Respondemos por WhatsApp.</p>
       <a class="btn" data-whatsapp="Hola, quiero agendar una cita.">Agendar por WhatsApp</a>
+
+      <div class="bloque-redes" id="redes">
+        <h3>Síguenos en redes</h3>
+        <div class="redes">
+          <a data-red="instagram" aria-label="Instagram"><img src="img/iconos/instagram.svg" alt=""></a>
+          <a data-red="tiktok" aria-label="TikTok"><img src="img/iconos/tiktok.svg" alt=""></a>
+          <a data-red="facebook" aria-label="Facebook"><img src="img/iconos/facebook.svg" alt=""></a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="contenedor">© <span id="anio"></span> Cocas’ Michel</div>
+  <div class="contenedor pie">
+    <span>© <span id="anio"></span> Cocas’ Michel</span>
+    <div class="redes">
+      <a data-red="instagram" aria-label="Instagram"><img src="img/iconos/instagram.svg" alt=""></a>
+      <a data-red="tiktok" aria-label="TikTok"><img src="img/iconos/tiktok.svg" alt=""></a>
+      <a data-red="facebook" aria-label="Facebook"><img src="img/iconos/facebook.svg" alt=""></a>
+    </div>
+  </div>
 </footer>
 
-<a class="whatsapp-flotante" data-whatsapp="Hola, quiero información de sus servicios.">WhatsApp</a>
+<div class="flotantes">
+  <a class="whatsapp-flotante" data-whatsapp="Hola, quiero información de sus servicios.">WhatsApp</a>
+</div>
 <div class="lightbox" id="lightbox">
   <button aria-label="Cerrar">×</button>
   <img alt="">

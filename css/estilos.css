@@ -123,6 +123,96 @@ footer { background: var(--negro); color: var(--arena); border-top: 1px solid #3
 .whatsapp-flotante { display: block; background: #25d366; color: var(--blanco); font-weight: 500; text-decoration: none; padding: 0.85rem 1.3rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transition: transform 0.25s; }
 .whatsapp-flotante:hover { transform: scale(1.06); }
 
+/* 10. ACCESIBILIDAD */
+[hidden] { display: none !important; }
+.saltar { position: absolute; left: 1rem; top: -4rem; z-index: 40; background: var(--negro); color: var(--blanco); padding: 0.75rem 1rem; transition: top 0.2s; }
+.saltar:focus { top: 1rem; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* 11. BOTÓN SECUNDARIO (solo contorno) Y ACCIONES */
+.btn-secundario { display: inline-block; background: transparent; color: var(--negro); font: inherit; font-weight: 500; padding: 0.8rem 1.6rem; border: 1px solid var(--negro); border-radius: 0; text-decoration: none; cursor: pointer; transition: background 0.25s, color 0.25s; }
+.btn-secundario:hover { background: var(--negro); color: var(--blanco); }
+.oscuro .btn-secundario, .hero-mensaje .btn-secundario { color: var(--beige); border-color: var(--beige); }
+.oscuro .btn-secundario:hover, .hero-mensaje .btn-secundario:hover { background: var(--beige); color: var(--negro); }
+.btn:disabled, .btn-secundario:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.hero-acciones, .menu-acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.menu-acciones { max-width: 1040px; margin: 1.25rem auto 0; }
+.menu li a[aria-current="page"] { color: var(--bordo); }
+#productos .btn, #productos .btn-secundario { margin: 0 0.75rem 0.75rem 0; }
+
+/* 12. INICIO: VENTAJAS Y HORARIOS */
+.ventajas { padding: 0; border-bottom: 1px solid var(--arena); }
+.ventajas ul { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 2rem 0; }
+.ventajas li { display: grid; gap: 0.25rem; align-content: start; }
+.ventajas strong { font-family: var(--display); font-weight: 400; font-size: 1.25rem; }
+.ventajas span { color: var(--gris); font-size: 0.95rem; }
+.bloque-horarios { margin-top: 2rem; }
+.bloque-horarios h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin-bottom: 0.75rem; }
+.lista-horarios { max-width: 420px; }
+.lista-horarios div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--arena); }
+
+/* 13. PÁGINAS INTERIORES (citas, productos, ingresar, registro, cuenta) */
+.pagina { padding: 3rem 0 4rem; min-height: 60vh; }
+.contenedor.angosto { width: min(560px, 100% - 2.5rem); }
+.titulo-pagina { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin-bottom: 0.75rem; }
+
+.formulario { display: grid; gap: 1.25rem; }
+.fila-campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+.formulario label { color: var(--negro); font-weight: 500; }
+.formulario input, .formulario select, .formulario textarea { width: 100%; min-height: 48px; padding: 0.8rem 0.9rem; font: inherit; background: var(--blanco); color: var(--negro); border: 1px solid var(--arena); border-radius: 0; }
+.formulario textarea { resize: vertical; }
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus { border-color: var(--bordo); }
+.formulario [aria-invalid="true"] { border-color: var(--bordo); background: #fbf2f3; }
+.formulario .btn { justify-self: start; }
+.error { display: block; color: var(--bordo); font-size: 0.875rem; margin-top: 0.3rem; }
+.error:empty, .error-general:empty { display: none; }
+.error-general { color: var(--bordo); font-weight: 500; }
+.formulario label.check { display: flex; align-items: flex-start; gap: 0.7rem; font-weight: 400; cursor: pointer; }
+.formulario input[type="checkbox"] { width: 22px; min-height: 0; height: 22px; flex: none; margin-top: 0.15rem; accent-color: var(--bordo); }
+.check a, .pie span a { color: inherit; }
+.ayuda { display: block; color: var(--gris); font-size: 0.85rem; margin-top: 0.3rem; }
+.alterno { margin-top: 1.5rem; color: var(--gris); }
+.alterno a { color: var(--bordo); }
+.confirmacion { background: var(--beige); padding: 1.75rem 1.5rem; display: grid; gap: 1rem; justify-items: start; }
+.confirmacion h2 { margin: 0; }
+.confirmacion:focus { outline: none; }
+
+/* Aviso de privacidad: texto largo, con ancho cómodo para leer */
+.texto-legal { width: min(760px, 100% - 2.5rem); }
+.texto-legal h2 { font-size: 1.4rem; margin: 2rem 0 0.6rem; }
+.texto-legal p, .texto-legal li { margin-bottom: 0.8rem; }
+.texto-legal ul { padding-left: 1.3rem; margin-bottom: 0.8rem; }
+.texto-legal a { color: var(--bordo); overflow-wrap: anywhere; }
+.actualizado { color: var(--gris); font-size: 0.9rem; margin-bottom: 1rem; }
+.aceptacion { margin-top: 2rem; padding: 1rem 1.25rem; background: var(--beige); }
+
+.bloque-cuenta { padding: 0; margin-bottom: 2.5rem; }
+.bloque-cuenta h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+.datos-cuenta div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--arena); }
+.datos-cuenta dt { color: var(--gris); }
+.datos-cuenta dd { text-align: right; overflow-wrap: anywhere; }
+.lista-citas { list-style: none; display: grid; gap: 0.75rem; margin-bottom: 1.25rem; }
+.cita { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--arena); }
+.cita > div { display: grid; gap: 0.15rem; }
+.cita .estado { font-size: 0.85rem; color: var(--bordo); }
+.cita.cancelada { opacity: 0.6; }
+.cita.cancelada strong { text-decoration: line-through; }
+.vacio-citas { color: var(--gris); margin-bottom: 1.25rem; }
+
+.productos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+.producto { display: flex; flex-direction: column; border: 1px solid var(--arena); background: var(--blanco); }
+.producto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.producto-cuerpo { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; padding: 1rem; }
+.producto h2 { font-size: 1.35rem; margin: 0; }
+.producto p { color: var(--gris); font-size: 0.95rem; }
+.producto-pie { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: auto; padding-top: 0.5rem; }
+.producto .precio { color: var(--bordo); font-weight: 500; }
+.vacio { background: var(--beige); padding: 2rem 1.5rem; max-width: 560px; display: grid; gap: 1rem; justify-items: start; }
+.vacio h2 { margin: 0; font-size: 1.6rem; }
+
 @media (max-width: 760px) {
   /* Espacios y letras más compactos para que no se sienta saturado */
   section { padding: 2.5rem 0; }
@@ -147,6 +237,11 @@ footer { background: var(--negro); color: var(--arena); border-top: 1px solid #3
 
   /* El mapa solo se ve (no atrapa el dedo al hacer scroll); el botón abre el mapa real */
   .mapa iframe { height: 240px; pointer-events: none; }
+
+  .ventajas ul { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem 0; }
+  .ventajas li { border-left: 2px solid var(--bordo); padding-left: 0.85rem; }
+  .pie { flex-direction: column-reverse; align-items: flex-start; }   /* redes arriba, a la izquierda: el botón de WhatsApp no las tapa */
+  .pagina { padding: 2rem 0 3rem; }
 
   footer { padding-bottom: 5rem; }
   .flotantes { right: 1rem; bottom: 1rem; }

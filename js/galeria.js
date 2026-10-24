@@ -26,6 +26,9 @@ export function iniciarGaleria() {
         img.src = foto.src;
         img.alt = foto.alt;
         img.loading = "lazy";
+        img.decoding = "async";
+        img.tabIndex = 0;                      // se puede llegar con el teclado
+        img.setAttribute("role", "button");
         figura.appendChild(img);
       } else {
         figura.textContent = "Imagen no disponible";
@@ -39,17 +42,32 @@ export function iniciarGaleria() {
     });
   }
 
-  // Lightbox: un solo clic en la galería sirve para todas las fotos.
-  grid.addEventListener("click", (evento) => {
-    if (evento.target.tagName !== "IMG") return;
-    lightboxImg.src = evento.target.src;
-    lightboxImg.alt = evento.target.alt;
+  // Lightbox: un solo evento en la galería sirve para todas las fotos.
+  let ultimaFoto = null;
+
+  function abrirLightbox(foto) {
+    ultimaFoto = foto;
+    lightboxImg.src = foto.src;
+    lightboxImg.alt = foto.alt;
     lightbox.classList.add("abierto");
-  });
+    lightbox.querySelector("button").focus();   // el teclado pasa al botón de cerrar
+  }
 
   function cerrarLightbox() {
+    if (!lightbox.classList.contains("abierto")) return;
     lightbox.classList.remove("abierto");
+    ultimaFoto?.focus();                        // y regresa a la foto que abriste
   }
+
+  grid.addEventListener("click", (evento) => {
+    if (evento.target.tagName === "IMG") abrirLightbox(evento.target);
+  });
+  grid.addEventListener("keydown", (evento) => {
+    if ((evento.key === "Enter" || evento.key === " ") && evento.target.tagName === "IMG") {
+      evento.preventDefault();
+      abrirLightbox(evento.target);
+    }
+  });
 
   // Se cierra con la X, tocando el fondo oscuro o con la tecla Escape.
   lightbox.addEventListener("click", (evento) => {

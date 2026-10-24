@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agendar cita | Cocas’ Michel</title>
+<meta name="description" content="Agenda tu cita en Cocas’ Michel: elige el servicio, la fecha y la hora, y te confirmamos por WhatsApp.">
+<meta name="theme-color" content="#1a1716">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="encabezado"></header>
+
+<main id="contenido" class="pagina">
+  <div class="contenedor angosto">
+    <h1 class="titulo-pagina">Agendar cita</h1>
+    <p class="intro">Elige el servicio y cuándo quieres venir. Te confirmamos la disponibilidad por WhatsApp.</p>
+
+    <form class="formulario" id="formulario-cita" novalidate>
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <div class="campo">
+        <label for="telefono">Teléfono (10 dígitos)</label>
+        <input id="telefono" name="telefono" type="tel" inputmode="numeric" autocomplete="tel-national" required>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <div class="campo">
+        <label for="servicio">Servicio</label>
+        <select id="servicio" name="servicio" required>
+          <option value="">Elige un servicio</option>
+        </select>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <div class="fila-campos">
+        <div class="campo">
+          <label for="fecha">Fecha</label>
+          <input id="fecha" name="fecha" type="date" required>
+          <small class="error" role="alert"></small>
+        </div>
+        <div class="campo">
+          <label for="hora">Hora</label>
+          <input id="hora" name="hora" type="time" required>
+          <small class="error" role="alert"></small>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="notas">Notas (opcional)</label>
+        <textarea id="notas" name="notas" rows="3" maxlength="300" placeholder="Largo del cabello, color que buscas, etc." aria-describedby="ayuda-notas"></textarea>
+        <small class="ayuda" id="ayuda-notas">Por favor, no escribas datos de salud.</small>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <div class="campo">
+        <label class="check" for="privacidad">
+          <input id="privacidad" name="privacidad" type="checkbox" required>
+          <span>He leído el <a href="privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</span>
+        </label>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <div class="campo">
+        <label class="check" for="condiciones">
+          <input id="condiciones" name="condiciones" type="checkbox" required>
+          <span>He leído las <a href="condiciones.html" target="_blank" rel="noopener">condiciones del servicio</a> (alergias y quejas).</span>
+        </label>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <p class="error-general" id="error-general" role="alert"></p>
+      <button class="btn" type="submit" id="enviar-cita">Solicitar cita</button>
+    </form>
+
+    <div class="confirmacion" id="confirmacion" hidden tabindex="-1">
+      <h2>¡Solicitud enviada!</h2>
+      <p id="resumen-cita"></p>
+      <p>Para que la agendemos, confírmala por WhatsApp.</p>
+      <a class="btn" id="confirmar-whatsapp">Confirmar por WhatsApp</a>
+      <a class="btn-secundario" href="citas.html">Agendar otra</a>
+    </div>
+  </div>
+</main>
+
+<footer id="pie"></footer>
+<script type="module" src="js/citas.js"></script>
+</body>
+</html>

@@ -1,2 +1,6 @@
 # Fotos originales sin comprimir: se quedan en tu computadora, no se suben.
 img-originales/
+
+# Secretos del backend: nunca se suben a git
+.env
+backend/.env

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi cuenta | Cocas’ Michel</title>
+<meta name="description" content="Tus datos y tus citas en Cocas’ Michel.">
+<meta name="theme-color" content="#1a1716">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="encabezado"></header>
+
+<main id="contenido" class="pagina">
+  <div class="contenedor angosto">
+    <h1 class="titulo-pagina">Mi cuenta</h1>
+    <p class="intro" id="saludo">Cargando…</p>
+
+    <section class="bloque-cuenta" aria-labelledby="titulo-datos">
+      <h2 id="titulo-datos">Mis datos</h2>
+      <dl class="datos-cuenta" id="datos"></dl>
+    </section>
+
+    <section class="bloque-cuenta" aria-labelledby="titulo-citas">
+      <h2 id="titulo-citas">Mis citas</h2>
+      <p class="error-general" id="error-general" role="alert"></p>
+      <ul class="lista-citas" id="lista-citas" aria-live="polite"></ul>
+      <p class="vacio-citas" id="sin-citas" hidden>Todavía no tienes citas.</p>
+      <a class="btn" href="citas.html">Agendar una cita</a>
+    </section>
+
+    <button class="btn-secundario" type="button" id="cerrar-sesion">Cerrar sesión</button>
+  </div>
+</main>
+
+<footer id="pie"></footer>
+<script type="module" src="js/cuenta.js"></script>
+</body>
+</html>

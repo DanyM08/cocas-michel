@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crear cuenta | Cocas’ Michel</title>
+<meta name="description" content="Crea tu cuenta de Cocas’ Michel para ver y administrar tus citas.">
+<meta name="theme-color" content="#1a1716">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="encabezado"></header>
+
+<main id="contenido" class="pagina">
+  <div class="contenedor angosto">
+    <h1 class="titulo-pagina">Crear cuenta</h1>
+    <p class="intro">Con una cuenta puedes ver y cancelar tus citas.</p>
+
+    <form class="formulario" id="formulario-registro" novalidate>
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        <small class="error" role="alert"></small>
+      </div>
+      <div class="campo">
+        <label for="telefono">Teléfono (10 dígitos)</label>
+        <input id="telefono" name="telefono" type="tel" inputmode="numeric" autocomplete="tel-national" required>
+        <small class="error" role="alert"></small>
+      </div>
+      <div class="campo">
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <small class="error" role="alert"></small>
+      </div>
+      <div class="campo">
+        <label for="password">Contraseña (mínimo 8 caracteres)</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" required>
+        <small class="error" role="alert"></small>
+      </div>
+      <div class="campo">
+        <label for="confirmar">Repite la contraseña</label>
+        <input id="confirmar" name="confirmar" type="password" autocomplete="new-password" required>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <div class="campo">
+        <label class="check" for="privacidad">
+          <input id="privacidad" name="privacidad" type="checkbox" required>
+          <span>He leído el <a href="privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a>.</span>
+        </label>
+        <small class="error" role="alert"></small>
+      </div>
+
+      <p class="error-general" id="error-general" role="alert"></p>
+      <button class="btn" type="submit" id="enviar">Crear cuenta</button>
+    </form>
+
+    <p class="alterno">¿Ya tienes cuenta? <a href="login.html">Ingresa</a></p>
+  </div>
+</main>
+
+<footer id="pie"></footer>
+<script type="module" src="js/registro.js"></script>
+</body>
+</html>

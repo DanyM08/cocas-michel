@@ -173,6 +173,8 @@ footer { background: var(--negro); color: var(--arena); border-top: 1px solid #3
 .formulario label.check { display: flex; align-items: flex-start; gap: 0.7rem; font-weight: 400; cursor: pointer; }
 .formulario input[type="checkbox"] { width: 22px; min-height: 0; height: 22px; flex: none; margin-top: 0.15rem; accent-color: var(--bordo); }
 .check a, .pie span a { color: inherit; }
+.horario-cita { margin-bottom: 1.75rem; }
+.aviso-horario { display: grid; gap: 0.6rem; justify-items: start; padding: 1rem 1.25rem; background: #fbf2f3; border-left: 3px solid var(--bordo); }
 .ayuda { display: block; color: var(--gris); font-size: 0.85rem; margin-top: 0.3rem; }
 .alterno { margin-top: 1.5rem; color: var(--gris); }
 .alterno a { color: var(--bordo); }

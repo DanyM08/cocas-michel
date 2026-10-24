@@ -19,6 +19,10 @@ de prueba (`USAR_MOCK = true`, datos en el navegador). Para conectar el backend 
   (bcrypt o argon2), nunca en claro.
 - **Todo se valida otra vez en el servidor.** Las validaciones del frontend son solo comodidad.
 - Un usuario solo puede ver y cancelar **sus** citas.
+- **Horario de atención** (hoy en `data/negocio.js`, campo `horario`): lunes, martes, jueves, viernes y sábado,
+  de 11:00 a 19:30 (la hora de cierre sí cuenta). El frontend avisa "fuera de horario" y no deja enviar; el
+  backend debe **validarlo también** y responder `400` con `{ "error": "Esa fecha u hora está fuera de horario. Si es urgente, habla con el personal." }`.
+  Además debe rechazar fechas pasadas y horas que ya pasaron el mismo día.
 
 ## Objetos
 

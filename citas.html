@@ -22,6 +22,7 @@
   <div class="contenedor angosto">
     <h1 class="titulo-pagina">Agendar cita</h1>
     <p class="intro">Elige el servicio y cuándo quieres venir. Te confirmamos la disponibilidad por WhatsApp.</p>
+    <p class="horario-cita"><strong>Horario:</strong> <span id="horario-cita"></span></p>
 
     <form class="formulario" id="formulario-cita" novalidate>
       <div class="campo">
@@ -55,6 +56,12 @@
           <input id="hora" name="hora" type="time" required>
           <small class="error" role="alert"></small>
         </div>
+      </div>
+
+      <div class="aviso-horario" id="aviso-horario" role="alert" hidden>
+        <p><strong>Esa fecha u hora está fuera de nuestro horario.</strong> Nuestro horario es <span id="texto-horario"></span> Elige otro día u hora.</p>
+        <p>Si es urgente, habla con el personal para agendar tu cita.</p>
+        <a class="btn-secundario" id="hablar-personal">Hablar con el personal por WhatsApp</a>
       </div>
 
       <div class="campo">

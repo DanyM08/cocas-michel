@@ -16,9 +16,15 @@ export const NEGOCIO = {
     enlace: "https://maps.app.goo.gl/XE54WARa9TNhmxrg9",
     mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d329.89771230757907!2d-103.28809604302073!3d20.695334758967146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b13fc0494381%3A0xcee8cc269152436e!2sEstetica%20Coca's%20Michel!5e0!3m2!1ses-419!2smx!4v1792119631947!5m2!1ses-419!2smx"
   },
-  // Horarios: si la lista está vacía, no se muestra nada. Ejemplo:
-  //   { dia: "Lunes a sábado", horas: "10:00 a 19:00" }
-  horarios: [],
+  // Horario de atención. Lo usan la sección "Horarios" y el formulario de citas (para avisar si
+  // piden una cita fuera de horario).
+  // - abre / cierra: hora en formato de 24 horas ("11:00", "19:30")
+  // - diasAbiertos: 0 = domingo, 1 = lunes, 2 = martes, 3 = miércoles, 4 = jueves, 5 = viernes, 6 = sábado
+  horario: {
+    abre: "11:00",
+    cierra: "19:30",
+    diasAbiertos: [1, 2, 4, 5, 6]
+  },
   // Productos de la tienda (página productos.html). Si está vacía, se muestra "Pronto". Ejemplo:
   //   { nombre: "Cabello natural 60 cm", precio: 1500, imagen: "img/cabello-natural-1.jpg", descripcion: "Cabello 100% natural, de humano." }
   productos: [],
